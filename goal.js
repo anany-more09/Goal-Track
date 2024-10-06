@@ -32,7 +32,7 @@ function addTask() {
 function displayTasks() {
   todoList.innerHTML = "";
   todo.forEach((item, index) => {
-    const p = document.createElement("p");
+    const p = document.createElement("p1");
     p.innerHTML = `
       <div class="todo-container">
         <input type="checkbox" class="todo-checkbox" id="input-${index}" ${
@@ -85,3 +85,30 @@ function deleteAllTasks() {
 function saveToLocalStorage() {
   localStorage.setItem("todo", JSON.stringify(todo));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
