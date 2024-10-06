@@ -4,12 +4,12 @@
 
 :root {
 
-    /* --gradient: linear-gradient(
+    --gradient: linear-gradient(
   180deg,
   rgba(255, 255, 204, 0.263) 0%, 
-  rgba(246, 246, 4, 0.377) 50%, 
-  rgba(13, 212, 247, 0.238) 100% 
-); */
+  rgba(246, 214, 4, 0.377) 50%, 
+  rgba(250, 3, 32, 0.085) 100% 
+);
     --dark: #001747;
     --grey: #b1bacb;
     --grey-border: rgba(210, 210, 210, 0.75);
@@ -31,7 +31,7 @@
     align-items: center;
     font-family: "Roboto", sans-serif;
   }
-  
+ 
   .btn {
     color: var(--white);
     font-size: 1.1rem;
@@ -115,10 +115,7 @@
     display: flex;
     flex-direction: column-reverse;
     gap: 1rem;
-    padding: 0.125rem;
-    /* background-color: gray; */
-  
-    
+    padding: 0.125rem;  
   }
   
   #todoList p {
@@ -135,9 +132,6 @@
     background: #f0f4f675;
 }
 
-
-
-  
   #todoList .disabled {
     color: #8f98a8;
   }
