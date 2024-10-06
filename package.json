@@ -1,0 +1,19 @@
+{
+  "name": "goal-track",
+  "version": "1.0.0",
+  "description": "Your daily and weekly goals tracking web app",
+  "main": "goal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anany-more09/Goal-Track.git"
+  },
+  "author": "Anany More",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anany-more09/Goal-Track/issues"
+  },
+  "homepage": "https://github.com/anany-more09/Goal-Track#readme"
+}
