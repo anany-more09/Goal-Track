@@ -48,18 +48,17 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
-/* Todo Container */
+/* ✅ Updated Todo Container */
 .todo {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border-radius: 2rem;
-  background: var(--white);
   padding: 0.65rem;
-  width: 70%;
-  height: 90%;
-  box-shadow: 0 1rem 3rem 1rem rgba(178, 247, 3, 0.242);
-  max-width: 30rem;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 h2 {
@@ -130,7 +129,7 @@ li {
 
 /* ✅ Highlight background for completed task */
 #todoList .done {
-  background-color: #e3fce4 !important;
+  background-color: #678668 !important;
 }
 
 #todoList .disabled {
@@ -240,7 +239,4 @@ input[type="checkbox"]:checked::before {
 
 .delete-btn i {
   pointer-events: none;
-}
-#todoList .done {
-  background-color: #678668 !important;
 }
