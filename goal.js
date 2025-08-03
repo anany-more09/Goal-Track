@@ -1,4 +1,3 @@
-// Retrieve todo from local storage or initialize an empty array
 let todo = JSON.parse(localStorage.getItem("todo")) || [];
 const todoInput = document.getElementById("todoInput");
 const todoList = document.getElementById("todoList");
@@ -6,12 +5,11 @@ const todoCount = document.getElementById("todoCount");
 const addButton = document.querySelector(".btn");
 const deleteButton = document.getElementById("deleteButton");
 
-// Initialize
 document.addEventListener("DOMContentLoaded", function () {
   addButton.addEventListener("click", addTask);
   todoInput.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      event.preventDefault(); // Prevents default Enter key behavior
+      event.preventDefault();
       addTask();
     }
   });
@@ -32,24 +30,41 @@ function addTask() {
 function displayTasks() {
   todoList.innerHTML = "";
   todo.forEach((item, index) => {
-    const p = document.createElement("p1");
-    p.innerHTML = `
-      <div class="todo-container">
-        <input type="checkbox" class="todo-checkbox" id="input-${index}" ${
-      item.disabled ? "checked" : ""
-    }>
-        <p id="todo-${index}" class="${
-      item.disabled ? "disabled" : ""
-    }" onclick="editTask(${index})">${item.text}</p>
-      </div>
-    `;
-    p.querySelector(".todo-checkbox").addEventListener("change", () =>
-      toggleTask(index)
-    );
-    todoList.appendChild(p);
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("todo-container");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("todo-checkbox");
+    checkbox.id = `input-${index}`;
+    if (item.disabled) checkbox.checked = true;
+    checkbox.addEventListener("change", () => toggleTask(index));
+
+    const taskText = document.createElement("p");
+    taskText.id = `todo-${index}`;
+    taskText.className = item.disabled ? "disabled" : "";
+    taskText.textContent = item.text;
+    taskText.addEventListener("click", () => editTask(index));
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    deleteBtn.addEventListener("click", () => deleteTask(index));
+
+    wrapper.appendChild(checkbox);
+    wrapper.appendChild(taskText);
+    wrapper.appendChild(deleteBtn);
+
+    const taskWrapper = document.createElement("p1");
+    taskWrapper.appendChild(wrapper);
+
+    todoList.appendChild(taskWrapper);
   });
+
   todoCount.textContent = todo.length;
 }
+
+
 
 function editTask(index) {
   const todoItem = document.getElementById(`todo-${index}`);
@@ -82,33 +97,12 @@ function deleteAllTasks() {
   displayTasks();
 }
 
+function deleteTask(index) {
+  todo.splice(index, 1);
+  saveToLocalStorage();
+  displayTasks();
+}
+
 function saveToLocalStorage() {
   localStorage.setItem("todo", JSON.stringify(todo));
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

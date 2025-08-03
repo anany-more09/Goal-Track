@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./goal.css" />
-    <script src="./goal.js" defer></script>
+    
     <title>Goal Track</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
-<link rel="icon" href="./assets/favicon.png" >
-<link rel="stylesheet" href="media.css">
 
+    <link rel="stylesheet" href="./goal.css" />
+    <link rel="stylesheet" href="media.css" />
+    <script src="./goal.js" defer></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="icon" href="./assets/favicon.png" />
   </head>
+
   <body>
     <section class="todo">
       <h2>To-do list</h2>
+
       <div class="input">
         <input
           type="text"
@@ -24,11 +27,13 @@
           id="todoInput"
           placeholder="Add a goal"
         />
-        <button class="btn">+</button>
+        <button class="btn" id="addButton">+</button>
       </div>
-      <ul class="scroll">
-        <li id="todoList"></li>
+
+      <ul class="scroll" id="todoList">
+        <!-- Tasks will be dynamically inserted here -->
       </ul>
+
       <div>
         <hr class="counter" />
         <div class="counter-container">
@@ -37,8 +42,9 @@
         </div>
       </div>
     </section>
-  <footer class="footer">
-    <p>Copyright &#169; 2024 All Rights Reserved by Anany.</p>
-  </footer>
+
+    <footer class="footer">
+      <p>Copyright &#169; 2024 All Rights Reserved by Anany.</p>
+    </footer>
   </body>
 </html>
